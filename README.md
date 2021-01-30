@@ -54,7 +54,7 @@ To do this, we have to *scale* our inequalities so `ub_i - lb_i` becomes of simi
 - You can also break truncated LCG with this idea.  left as exercise.
 - This method does not work *that* well with low density 0/1 knapsack - CJ LOSS is much better.
 - The *scaling* method (obviously) increases the runtime of the LLL.
-
+- It seems like sometimes SVP gives better results than CVP...
 
 
 ## Simple "tricks"
