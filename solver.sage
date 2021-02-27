@@ -45,8 +45,8 @@ def solve(mat, lb, ub, weight = None):
 		applied_weights.append(ineq_weight)
 		for j in range(num_var):
 			mat[j, i] *= ineq_weight
-			lb[i] *= ineq_weight
-			ub[i] *= ineq_weight
+		lb[i] *= ineq_weight
+		ub[i] *= ineq_weight
 
 	# Solve CVP
 	target = vector([(lb[i] + ub[i]) // 2 for i in range(num_ineq)])
