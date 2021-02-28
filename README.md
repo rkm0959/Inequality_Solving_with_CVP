@@ -50,7 +50,7 @@ To do this, we have to *scale* our inequalities so `ub_i - lb_i` becomes of simi
 ## Further Comments
 
 - **Babai's Algorithm implementation is NOT MINE - read solver.sage for details**
-- I have included 4 example challenges I have solved using this technique.
+- I have included some example challenges I have solved using this technique.
 - You can also break truncated LCG with this idea.  left as exercise.
 - This method does not work *that* well with low density 0/1 knapsack - CJ LOSS is much better.
 - The *scaling* method (obviously) increases the runtime of the LLL.
