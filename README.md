@@ -70,7 +70,4 @@ To do this, we have to *scale* our inequalities so `ub_i - lb_i` becomes of simi
 
 - Most of these "tricks" are relatively obvious, and they are used in the example solutions.
 
-  
-
- 
-
+- A good way to decide whether this method is feasible is considering "entropy" - check out [Mystiz's blog](https://mystiz.hk/posts/2021-02-28-aeroctf/) on Example Challenge 5.
