@@ -7,14 +7,7 @@ This algorithm can solve for **all** `x` such that the following inequality hold
 
 This algorithm is used in some competitive programming challenges as well.
 
-For a discussion, check 
-
-[Codeforces Good Bye 2014 G]: https://codeforces.com/blog/entry/15488
-
- and 
-
-[NWRRC 2019 G]: https://neerc.ifmo.ru/archive/2019.html
-
+For a discussion, check https://codeforces.com/blog/entry/15488 and https://neerc.ifmo.ru/archive/2019.html
 
 
 ## How to use
