@@ -9,6 +9,8 @@ This algorithm is used in some competitive programming challenges as well.
 
 For a discussion, check https://codeforces.com/blog/entry/15488 and https://neerc.ifmo.ru/archive/2019.html
 
+(Codeforces Good Bye 2014 Problem G), (NWRRC 2019 Problem G)
+
 
 ## How to use
 
