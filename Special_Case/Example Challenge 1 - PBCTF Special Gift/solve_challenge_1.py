@@ -20,7 +20,7 @@ def is_inside(L, R, M, val): # is L <= val <= R in mod M context?
 		return False
 
 ## some notes : it's good idea to check for gcd(A, M) = 1
-## in CTF context, if gcd(A, M) != 1, we can factorize M and we can solve the challenge
+## in CTF context, if gcd(A, M) != 1, we can factorize M and sometimes we can solve the challenge
 ## in competitive programming context, we need to check gcd(A, M) = 1 and decide whether solution even exists..
 def optf(A, M, L, R): # minimum nonnegative x s.t. L <= Ax mod M <= R
 	if L == 0:
