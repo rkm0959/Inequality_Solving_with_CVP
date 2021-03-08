@@ -35,4 +35,5 @@ The inequality means that `Ax (mod M)` lies in the 'arc' from `L` to `R`, clockw
 This means that, for example, `M-5 <= Ax (mod M) <= 3` has a solution. 
 
 
+
 Of course, you can also use `optf` function directly. I don't know why I named it like that but anyway...
