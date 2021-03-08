@@ -1,5 +1,4 @@
-from Crypto.Util.number import GCD, long_to_bytes
-from tqdm import tqdm
+from Crypto.Util.number import GCD
 
 ## L <= Ax mod M <= R means Ax mod M lies inside the "circular arc" between L and R
 ## to visualize, think of 0 ~ M lying on a circle - the key is that for example,
