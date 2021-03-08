@@ -4,6 +4,8 @@ a.k.a. the method rkm0959 uses all the time for CTFs, worked well so far, but ha
 
 obviously I'm not going to claim anything like "I uSed tHIs iDea FirST!!!", since I've seen others use it
 
+a special case of this problem has another algorithm : check the "Special Case" folder for details
+
 ## How to use
 
 The solve function has four inputs, matrix ``mat``, lower/upper bounds ``lb, ub``, and a ``weight``.
