@@ -6,6 +6,8 @@ obviously I'm not going to claim anything like "I uSed tHIs iDea FirST!!!", sinc
 
 a special case of this problem has another algorithm : check the "Special Case" folder for details
 
+A full writeup on this toolkit (in Korean) will hopefully be posted for SAMSUNG Software Membership blog.
+
 ## How to use
 
 The solve function has four inputs, matrix ``mat``, lower/upper bounds ``lb, ub``, and a ``weight``.
@@ -20,7 +22,15 @@ Of course, we require the length of ``lb, ub`` to be ``m``.
 
 ``weight`` is a variable that you do *NOT* have to initialize. It will be explained later.
 
+`result` is the result of the CVP 
 
+`applied_weights` is the applied weights during the weighting process (see below)
+
+`fin` is the actual value of the variables, recovered when `n = m` and vectors are linearly independent
+
+We also have a heuristic for number of solutions for the inequality. This is a good way to decide if this method is feasible.
+
+For some notes on this topic, check out [Mystiz's writeup on Example Challenge 5.](https://mystiz.hk/posts/2021-02-28-aeroctf/)
 
 ## The reasoning behind the algorithm
 
@@ -48,7 +58,6 @@ To do this, we have to *scale* our inequalities so `ub_i - lb_i` becomes of simi
 - The default `weight` is what I think is "super large", but you can definitely change it :)
 
 
-
 ## Further Comments
 
 - **Babai's Algorithm implementation is NOT MINE - read solver.sage for details**
@@ -58,20 +67,3 @@ To do this, we have to *scale* our inequalities so `ub_i - lb_i` becomes of simi
 - The *scaling* method (obviously) increases the runtime of the LLL.
 - It seems like sometimes SVP gives better results than CVP...
 - If failed, it's a good idea to try a different scaling by observing the failed output.
-
-
-## Simple "tricks"
-
-- Inequalities with `(mod n)` things can be done by adding a dummy variable and multiplying `n`
-
-- After retrieving solution, you *must* note that the values retrieved are scaled. 
-
-- If you want to retrieve the value of a certain variable, add a simple constraint to it.
-
-- For example, if you want `d`, add a constraint like `0 <= d <= n` to the matrix/lb/ub.
-
-- Most of these "tricks" are relatively obvious, and they are used in the example solutions.
-
-- A good way to decide whether this method is feasible is considering "entropy".
-
-- For some notes on entropy, check out [Mystiz's writeup on Example Challenge 5.](https://mystiz.hk/posts/2021-02-28-aeroctf/)
