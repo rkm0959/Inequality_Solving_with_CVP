@@ -23,6 +23,7 @@ def solve(mat, lb, ub, weight = None):
 	if weight == None:
 		weight = num_ineq * max_element
 
+    # sanity checker
 	if len(lb) != num_ineq:
 		print("Fail: len(lb) != num_ineq")
 		return
@@ -35,6 +36,21 @@ def solve(mat, lb, ub, weight = None):
 		if lb[i] > ub[i]:
 			print("Fail: lb[i] > ub[i] at index", i)
 			return
+
+    	# heuristic for number of solutions
+	DET = 0
+
+	if num_var == num_ineq:
+		DET = abs(mat.det())
+		num_sol = 1
+		for i in range(num_ineq):
+			num_sol *= (ub[i] - lb[i])
+		if DET == 0:
+			print("Zero Determinant")
+		else:
+			num_sol //= DET
+			# + 1 added in for the sake of not making it zero...
+			print("Expected Number of Solutions : ", num_sol + 1)
 
 	# scaling process begins
 	max_diff = max([ub[i] - lb[i] for i in range(num_ineq)])
@@ -56,6 +72,13 @@ def solve(mat, lb, ub, weight = None):
 		if (lb[i] <= result[i] <= ub[i]) == False:
 			print("Fail : inequality does not hold after solving")
 			break
+    
+    	# recover x
+	fin = None
 
+	if DET != 0:
+		mat = mat.transpose()
+		fin = mat.solve_right(result)
+	
 	## recover your result
-	return result, applied_weights
+	return result, applied_weights, fin
