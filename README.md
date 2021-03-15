@@ -28,9 +28,7 @@ Of course, we require the length of ``lb, ub`` to be ``m``.
 
 `fin` is the actual value of the variables, recovered when `n = m` and vectors are linearly independent
 
-We also have a heuristic for number of solutions for the inequality. This is a good way to decide if this method is feasible.
-
-For some notes on this topic, check out [Mystiz's writeup on Example Challenge 5.](https://mystiz.hk/posts/2021-02-28-aeroctf/)
+We also have a heuristic for number of solutions for the inequality. This is a good way to decide if this method is feasible. For some notes on this topic, check out [Mystiz's writeup on Example Challenge 5.](https://mystiz.hk/posts/2021-02-28-aeroctf/)
 
 ## The reasoning behind the algorithm
 
