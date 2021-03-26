@@ -8,6 +8,8 @@ a special case of this problem has another algorithm : check the "Special Case" 
 
 A full writeup on this toolkit (in Korean) will hopefully be posted for SAMSUNG Software Membership blog.
 
+http://www.secmem.org/blog/2021/03/15/Inequality_Solving_with_CVP/
+
 ## How to use
 
 The solve function has four inputs, matrix ``mat``, lower/upper bounds ``lb, ub``, and a ``weight``.
