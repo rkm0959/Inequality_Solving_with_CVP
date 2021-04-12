@@ -1,10 +1,6 @@
 # Inequality Solving with CVP
 
-a.k.a. the method rkm0959 uses all the time for CTFs, worked well so far, but has no idea why
-
-obviously I'm not going to claim anything like "I uSed tHIs iDea FirST!!!", since I've seen others use it
-
-a special case of this problem has another algorithm : check the "Special Case" folder for details
+A special case of this problem has another algorithm : check the "Special Case" folder for details
 
 A full writeup on this toolkit (in Korean) will hopefully be posted for SAMSUNG Software Membership blog.
 
@@ -34,7 +30,7 @@ We also have a heuristic for number of solutions for the inequality. This is a g
 
 ## The reasoning behind the algorithm
 
-**Warning : the stuff I say here are not mathematically precise. It's 100% intuition**
+**Warning : the stuff I say here are not mathematically precise. It's based on intuition**
 
 Basically what the algorithm does, is to build a lattice with the given matrix and find a closest vector (with Babai's algorithm) to ``(lb + vb) / 2``. However, there is one more twist to the algorithm.
 
@@ -62,7 +58,7 @@ To do this, we have to *scale* our inequalities so `ub_i - lb_i` becomes of simi
 
 - **Babai's Algorithm implementation is NOT MINE - read solver.sage for details**
 - I have included some example challenges I have solved using this technique.
-- You can also break truncated LCG with this idea.  left as exercise.
+- You can also break truncated LCG with this idea.
 - This method does not work *that* well with low density 0/1 knapsack - CJ LOSS is much better.
 - The *scaling* method (obviously) increases the runtime of the LLL.
 - It seems like sometimes SVP gives better results than CVP...
