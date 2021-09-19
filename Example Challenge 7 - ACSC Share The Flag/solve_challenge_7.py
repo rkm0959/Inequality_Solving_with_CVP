@@ -21,7 +21,7 @@ def SVP_oracle(mat):
 	M = mat.BKZ(block_size = 30)
 	return M
 
-def solve(mat, lb, ub, weight = None, auto = True, mode = None, block_size = None, verbose = False):
+def solve(mat, lb, ub):
 	num_var  = mat.nrows()
 	num_ineq = mat.ncols()
 
@@ -29,9 +29,6 @@ def solve(mat, lb, ub, weight = None, auto = True, mode = None, block_size = Non
 	for i in range(num_var):
 		for j in range(num_ineq):
 			max_element = max(max_element, abs(mat[i, j]))
-
-	if weight == None or weight < 0:
-		weight = num_ineq * max_element
 
 	# sanity checker
 	if len(lb) != num_ineq:
@@ -72,10 +69,7 @@ def solve(mat, lb, ub, weight = None, auto = True, mode = None, block_size = Non
 	applied_weights = []
 
 	for i in range(N):
-		ineq_weight = 0
-		if lb[i] == 0 and ub[i] == 251:
-			ineq_weight = 1
-		else: ineq_weight = 100 * max_diff // (ub[i] - lb[i])
+		ineq_weight = max_diff // (ub[i] - lb[i])
 		applied_weights.append(ineq_weight)
 		for j in range(N):
 			mat[j, i] *= ineq_weight
