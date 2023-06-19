@@ -11,7 +11,8 @@ def Babai_CVP(mat, target):
 	return target - diff
 
 
-def solve(mat, lb, ub, weight = None):
+def solve(M, lbounds, ubounds, weight = None):
+	mat, lb, ub = copy(M), copy(lbounds), copy(ubounds)
 	num_var  = mat.nrows()
 	num_ineq = mat.ncols()
 
